@@ -1,0 +1,12 @@
+$theme-colors: (
+  "primary": #70A6E1,
+  "secondary":#D170E1,
+  "tertiary":#C8ECDA,
+  "dark":#212121,
+  "darker":#121212,
+  "cement":#c3c3c3,
+  "overlay-dark":#303030,
+);
+
+// Import Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

@@ -1,0 +1,64 @@
+body{
+    background-color: #212121;
+}
+.full{
+    min-height: 100vh;
+   min-width: 100vw; 
+}
+#landing-page-container{
+    position: relative;
+}
+#landing-page-bg{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    object-fit: cover;
+}
+#landing-page-overlay{
+    position: absolute;
+    background-color: #303030d9;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+}
+#landing-page-content{
+    position: absolute;
+    top: 0%;
+
+}
+.overview-nft-box{
+    height: 20vh;
+    width: 20vh;
+}
+.overview-container{
+    height:35vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+
+  .all-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .overview-container ,.plan-card {
+    opacity: 1;
+    animation: fade-in 1s linear;
+}
+
+
+@keyframes fade-in {
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+#link-meta-mask{
+    height: 50vh;
+    width: 50vw;
+    border-radius: 20px;
+}
+#link-meta-mask img{
+height: 200px;
+width: 200px;
+}
