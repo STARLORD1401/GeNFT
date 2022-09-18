@@ -32,7 +32,7 @@ function Gallery() {
                     className={`gallery-nft-box mx-2  text-white all-center bg-dark ${
                       (m + 1 + i) % 2 === 0
                         ? "border-primary"
-                        : "border-secondary",
+                        : "border-secondary"
                     } `}
                   >
                     <img
