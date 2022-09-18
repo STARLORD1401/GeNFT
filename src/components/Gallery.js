@@ -15,6 +15,8 @@ function Gallery() {
   const k = 3;
   const [profileInsight, toggleProfileInsight] = useState(false);
   const nft = [avatar1, avatar2, avatar3, avatar4];
+  useEffect(() => {}, []);
+  const [isConnected, setIsConnected] = useState(false);
   return (
     <div className="bg-darker full" style={{ backgroundImage: { background } }}>
       <NavigationBar
