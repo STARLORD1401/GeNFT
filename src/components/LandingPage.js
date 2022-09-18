@@ -5,6 +5,7 @@ import Overview from "./Overview";
 import background from "../assets/bg-1.jpeg";
 import { Button } from "reactstrap";
 import Login from "./Login";
+import Tagline from "./Tagline";
 
 function LandingPage() {
   const [page, togglePage] = useState(1);
@@ -20,13 +21,7 @@ function LandingPage() {
         >
           GeNFT
         </h1>
-        <div className="bg-dark rounded-pill p-3">
-          <div className="d-flex">
-            <li className="text-primary">GENERATE</li>
-            <li className="text-secondary mx-3">HODL</li>
-            <li className="text-tertiary">SELL</li>
-          </div>
-        </div>
+        <Tagline />
         {page === 2 && (
           <div>
             <Overview />

@@ -1,13 +1,8 @@
 import "./App.css";
 import "./custom.scss";
-import LandingPage from "./components/LandingPage";
+
 import { authProtectedRoutes, publicRoutes } from "./routes";
-import {
-  Routes,
-  Route,
-  BrowserRouter as Router,
-  Navigate,
-} from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
@@ -40,5 +35,4 @@ function App() {
   );
 }
 
-
-export default App
+export default App;

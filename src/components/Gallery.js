@@ -8,15 +8,13 @@ import avatar1 from "../assets/avatar_0000.png";
 import avatar2 from "../assets/avatar_0001.png";
 import avatar3 from "../assets/avatar_0002.png";
 import avatar4 from "../assets/avatar_0003.png";
-import { style } from "@mui/system";
 
 function Gallery() {
   const n = 3;
   const k = 3;
   const [profileInsight, toggleProfileInsight] = useState(false);
   const nft = [avatar1, avatar2, avatar3, avatar4];
-  useEffect(() => {}, []);
-  const [isConnected, setIsConnected] = useState(false);
+
   return (
     <div className="bg-darker full" style={{ backgroundImage: { background } }}>
       <NavigationBar
@@ -39,6 +37,7 @@ function Gallery() {
                   >
                     <img
                       src={nft[m]}
+                      alt="#"
                       style={{
                         height: "300px",
                         width: "300px",
