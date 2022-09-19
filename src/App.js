@@ -1,6 +1,5 @@
 import "./App.css";
 import "./custom.scss";
-
 import { authProtectedRoutes, publicRoutes } from "./routes";
 import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
