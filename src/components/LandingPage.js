@@ -6,13 +6,14 @@ import background from "../assets/bg-1.jpeg";
 import { Button } from "reactstrap";
 import Login from "./MetaMask";
 import Tagline from "./Brand";
+import BackgroundImage from "./BackgroundImage";
 
 function LandingPage() {
   const [page, togglePage] = useState(1);
   return (
     <div>
       <div id="landing-page-container"></div>
-      <img src={background} alt="bg" id="landing-page-bg" />
+      <BackgroundImage bg={background} />
       <div id="landing-page-overlay" />
       <div className="all-center full flex-column" id="landing-page-content">
         <Tagline />
@@ -25,7 +26,7 @@ function LandingPage() {
           <div>
             <PlansPage />
           </div>
-        )}{" "}
+        )}
         {page === 4 && (
           <div>
             <Login />

@@ -9,6 +9,7 @@ import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import QR from "../assets/qr.png";
+import bg2 from "../assets/bg-2.png";
 
 function ProfileInsight(props) {
   const [showQR, toggleShowQR] = useState(false);
@@ -19,44 +20,59 @@ function ProfileInsight(props) {
       id="profile-insight"
       className="bg-dark all-center justify-content-start flex-column p-2"
     >
-      <div
-        id="profile-insight-banner"
-        className="bg-primary all-center flex-column text-white justify-content-start"
-      >
-        <div className="w-100 all-center align-items-start p-2">
-          <Button
-            className="text-primary col-2 "
-            color="dark"
-            style={{ borderRadius: "50%", height: "50px", width: "50px" }}
-            onClick={() => {
-              toggleShowQR(!showQR);
-            }}
-          >
-            {showQR ? <CloseIcon /> : <QrCodeScannerIcon />}
-          </Button>
-          <span className="col-8" />
-          <Button
-            className=" text-primary col-2 "
-            color="dark"
-            style={{ borderRadius: "50%", height: "50px", width: "50px" }}
-          >
-            <ShareIcon />
-          </Button>
-        </div>
+      <div className="all-center flex-column text-white justify-content-start">
+        <img
+          src={bg2}
+          style={{
+            height: "30vh",
+            width: "28vw",
+            borderRadius: "20px",
+            position: "relative",
+          }}
+          alt="banner"
+        />
+        <div
+          id="profile-insight-banner"
+          className="all-center flex-column justify-content-start"
+          style={{
+            position: "absolute",
+          }}
+        >
+          <div className=" all-center align-items-start p-2 w-100">
+            <Button
+              className="text-primary col-4 "
+              color="dark"
+              style={{ borderRadius: "50%", height: "50px", width: "50px" }}
+              onClick={() => {
+                toggleShowQR(!showQR);
+              }}
+            >
+              {showQR ? <CloseIcon /> : <QrCodeScannerIcon />}
+            </Button>
+            <span className="col-8 " />
+            <Button
+              className=" text-primary col-4 "
+              color="dark"
+              style={{ borderRadius: "50%", height: "50px", width: "50px" }}
+            >
+              <ShareIcon />
+            </Button>
+          </div>
 
-        {showQR ? (
-          <img
-            alt="qr"
-            src={QR}
-            style={{ height: "100px", width: "100px", borderRadius: "20px" }}
-          />
-        ) : (
-          <div
-            className="bg-white"
-            style={{ height: "100px", width: "100px", borderRadius: "20px" }}
-          />
-        )}
-        <h6 className="mt-2">0x891458.....0d224</h6>
+          {showQR ? (
+            <img
+              alt="qr"
+              src={QR}
+              style={{ height: "100px", width: "100px", borderRadius: "20px" }}
+            />
+          ) : (
+            <div
+              className="bg-white"
+              style={{ height: "100px", width: "100px", borderRadius: "20px" }}
+            />
+          )}
+          <h6 className="mt-2">{props.userDetails.username}</h6>
+        </div>
       </div>
       <ListGroup className="w-100 mt-3">
         <ListGroupItem

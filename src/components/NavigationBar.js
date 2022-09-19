@@ -14,7 +14,7 @@ function NavigationBar(props) {
         >
           <div id="nav-profile-pic" className="bg-primary" />
           <div id="nav-public-address" className="bg-primary p-2 text-white">
-            0x891458.....0d224
+            {props.userDetails.username}
           </div>
         </NavItem>
       </Nav>

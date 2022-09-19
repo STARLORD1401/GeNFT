@@ -5,7 +5,7 @@ import Tagline from "./Brand";
 function QuotesCard() {
   return (
     <Card
-      className="text-tertiary all-center bg-overlay-dark "
+      className="text-tertiary all-center bg-dark p-5 "
       style={{
         borderRadius: "20px",
         height: "500px",

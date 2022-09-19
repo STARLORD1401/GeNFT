@@ -1,6 +1,9 @@
 .full{
   min-height: 100vh;
  min-width: 100vw; 
+ max-height: 100vh;
+ max-width: 100vh;
+
 }
 .all-center{
   display: flex;
