@@ -5,12 +5,20 @@ import Tagline from "./Brand";
 function QuotesCard() {
   return (
     <Card
-      className="bg-overlay-dark text-tertiary all-center "
-      style={{ borderRadius: "20px", height: "500px", width: "500px" }}
+      className="text-tertiary all-center bg-overlay-dark "
+      style={{
+        borderRadius: "20px",
+        height: "500px",
+        width: "500px",
+      }}
     >
       <Tagline />
       <CardBody className="all-center">
-        <h5>To sell or not to sell</h5>
+        <h5>
+          To sell or not to sell that is the question.
+          <br />
+          <br /> Well, you can always HODL
+        </h5>
       </CardBody>
     </Card>
   );
