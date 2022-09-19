@@ -4,8 +4,8 @@ import PlansPage from "./PlansPage";
 import Overview from "./Overview";
 import background from "../assets/bg-1.jpeg";
 import { Button } from "reactstrap";
-import Login from "./Login";
-import Tagline from "./Tagline";
+import Login from "./MetaMask";
+import Tagline from "./Brand";
 
 function LandingPage() {
   const [page, togglePage] = useState(1);
@@ -15,12 +15,6 @@ function LandingPage() {
       <img src={background} alt="bg" id="landing-page-bg" />
       <div id="landing-page-overlay" />
       <div className="all-center full flex-column" id="landing-page-content">
-        <h1
-          className="text-tertiary font-weight-bold"
-          style={{ fontSize: "100px" }}
-        >
-          GeNFT
-        </h1>
         <Tagline />
         {page === 2 && (
           <div>

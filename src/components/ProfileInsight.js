@@ -90,6 +90,17 @@ function ProfileInsight(props) {
           className="bg-dark text-white list-items"
           tag="a"
           href="#"
+          onClick={() => {
+            navigate("/form-page");
+          }}
+        >
+          <ExitToAppIcon className="me-3" />
+          Register
+        </ListGroupItem>
+        <ListGroupItem
+          className="bg-dark text-white list-items"
+          tag="a"
+          href="#"
         >
           <ExitToAppIcon className="me-3" />
           Sign Out
