@@ -22,7 +22,6 @@ body{overflow-y: hidden;}
 }
 #profile-insight{
     width:35vw ;
-    height: 60vh;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }

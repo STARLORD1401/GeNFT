@@ -1,9 +1,16 @@
 import "./App.css";
 import "./custom.scss";
 import { authProtectedRoutes, publicRoutes } from "./routes";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  Navigate,
+} from "react-router-dom";
+import { getUser } from "./helpers/auth";
 
 function App() {
+  const userDetails = getUser();
   return (
     <Router>
       <Routes>
@@ -20,12 +27,10 @@ function App() {
           <Route
             path={route.path}
             element={
-              // !userDetails ? <Navigate to="/login" /> :
-              <route.component />
+              !userDetails ? <Navigate to="/form-page" /> : <route.component />
             }
             key={"auth" + index}
-            // isAuthProtected={!userDetails ? false : true}
-            isAuthProtected={false}
+            isAuthProtected={!userDetails ? false : true}
             exact={true}
           />
         ))}

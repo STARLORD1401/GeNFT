@@ -33,7 +33,6 @@ function LoginForm(props) {
       className="text-primary p-0 bg-dark w-100"
       style={{ borderRadius: "20px" }}
     >
-      {" "}
       {shouldRedirect && <Navigate to="/gallery" />}
       <CardHeader
         className="all-center"
@@ -44,9 +43,9 @@ function LoginForm(props) {
       >
         <h2>Login</h2>
       </CardHeader>
-      <CardBody>
-        <Form>
-          <FormGroup className="p-2">
+      <CardBody className="all-center">
+        <Form className="w-75">
+          <FormGroup className="p-1 col-12">
             <Label>Username</Label>
             <Input
               className="bg-dark border-primary text-primary form-control rounded-pill"
@@ -54,7 +53,7 @@ function LoginForm(props) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="p-2">
+          <FormGroup className="p-1">
             <Label>Password</Label>
             <Input
               className="bg-dark border-primary text-primary form-control rounded-pill"

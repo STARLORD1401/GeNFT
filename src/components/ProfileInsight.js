@@ -5,7 +5,9 @@ import ShareIcon from "@mui/icons-material/Share";
 import Person4Icon from "@mui/icons-material/Person4";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
+import AssignmentIcon from "@mui/icons-material/Assignment";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import { useNavigate } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import QR from "../assets/qr.png";
@@ -80,7 +82,7 @@ function ProfileInsight(props) {
           tag="a"
           href="#"
           onClick={() => {
-            navigate("/user-details");
+            navigate("/profile-settings");
           }}
         >
           <Person4Icon className="me-3" />
@@ -110,16 +112,31 @@ function ProfileInsight(props) {
             navigate("/form-page");
           }}
         >
-          <ExitToAppIcon className="me-3" />
+          <AssignmentIcon className="me-3" />
           Register
         </ListGroupItem>
         <ListGroupItem
           className="bg-dark text-white list-items"
           tag="a"
           href="#"
+          onClick={() => {
+            props.delUser();
+            navigate("/form-page");
+          }}
         >
           <ExitToAppIcon className="me-3" />
           Sign Out
+        </ListGroupItem>
+        <ListGroupItem
+          className="bg-dark text-white list-items"
+          tag="a"
+          href="#"
+          onClick={() => {
+            navigate("/python-test");
+          }}
+        >
+          <AutoFixHighIcon className="me-3" />
+          Test Generator
         </ListGroupItem>
       </ListGroup>
     </Collapse>

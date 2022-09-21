@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Navigate } from "react-router-dom";
-// import { getUser } from "../helpers/auth";
+import { getUser } from "../helpers/auth";
 
 const AppRoute = ({
   component: Component,
@@ -11,13 +11,13 @@ const AppRoute = ({
   <Route
     {...rest}
     render={(props) => {
-      // if (isAuthProtected && getUser() !== null) {
-      //   return (
-      //     <Navigate
-      //       to={{ pathname: "/login", state: { from: props.location } }}
-      //     />
-      //   );
-      // }
+      if (isAuthProtected && getUser() !== null) {
+        return (
+          <Navigate
+            to={{ pathname: "/form-page", state: { from: props.location } }}
+          />
+        );
+      }
       return <Component {...props} />;
     }}
   />

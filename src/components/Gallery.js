@@ -9,7 +9,7 @@ import avatar2 from "../assets/avatar_0001.png";
 import avatar3 from "../assets/avatar_0002.png";
 import avatar4 from "../assets/avatar_0003.png";
 import BackgroundImage from "./BackgroundImage.js";
-import { getUser } from "../helpers/auth";
+import { getUser, delUser } from "../helpers/auth";
 
 function Gallery() {
   const n = 3;
@@ -30,7 +30,11 @@ function Gallery() {
           profileInsight={profileInsight}
         />
         <div className="all-center align-items-start">
-          <ProfileInsight isOpen={profileInsight} userDetails={userDetails} />
+          <ProfileInsight
+            isOpen={profileInsight}
+            userDetails={userDetails}
+            delUser={delUser}
+          />
           <div className="all-center flex-column" style={{}}>
             <div id="gallery-container">
               {[...Array(n)].map((e, i) => (

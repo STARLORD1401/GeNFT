@@ -1,22 +1,33 @@
 import LandingPage from "../components/LandingPage.js";
 import Gallery from "../components/Gallery.js";
-import UserDetails from "../components/UserDetails.js";
+import ProfileSettings from "../components/ProfileSettings";
 import FormPage from "../components/FormPage";
+import Generator from "../components/Generator.js";
 
-const authProtectedRoutes = [];
-const publicRoutes = [
-  {
-    path: "/",
-    component: LandingPage,
-  },
+const authProtectedRoutes = [
   {
     path: "/gallery",
     component: Gallery,
   },
   {
-    path: "/user-details",
-    component: UserDetails,
+    path: "/profile-settings",
+    component: ProfileSettings,
   },
+  {
+    path: "/profile-settings",
+    component: ProfileSettings,
+  },
+  {
+    path: "/python-test",
+    component: Generator,
+  },
+];
+const publicRoutes = [
+  {
+    path: "/",
+    component: LandingPage,
+  },
+
   {
     path: "/form-page",
     component: FormPage,

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Button } from "reactstrap";
-// import Web3 from "web3";
 import MetaMaskFox from "../assets/MetaMask_Fox.png";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { useNavigate } from "react-router-dom";
@@ -8,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 function Login() {
   const navigate = useNavigate();
   console.log("navigate: ", navigate);
-
-  useEffect(() => {}, []);
   const [isConnected, setIsConnected] = useState(false);
 
   const detectCurrentProvider = () => {
@@ -29,18 +26,13 @@ function Login() {
       if (currentProvider) {
         await currentProvider.request({ method: "eth_requestAccounts" });
       }
-      // const web3 = new Web3(currentProvider);
-      // const userAccount = await web3.eth.getAccounts();
-      // const account = userAccount[0];
-
       setIsConnected(true);
     } catch (err) {
       console.log(err);
     }
   };
-  // const onDisconnect = () => {
-  //   setIsConnected(false);
-  // };
+  onConnect();
+
   return (
     <div
       id="link-meta-mask"

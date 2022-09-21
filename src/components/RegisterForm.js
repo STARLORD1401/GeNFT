@@ -53,10 +53,10 @@ function RegisterForm(props) {
       >
         <h2>Register</h2>
       </CardHeader>
-      <CardBody>
+      <CardBody className="all-center">
         <Form>
           <div className="d-flex">
-            <FormGroup className="p-2">
+            <FormGroup className="p-1">
               <Label>First Name</Label>
               <Input
                 className="bg-dark border-secondary text-secondary form-control rounded-pill"
@@ -64,7 +64,7 @@ function RegisterForm(props) {
                 onChange={(e) => setFirstName(e.target.value)}
               />
             </FormGroup>
-            <FormGroup className="p-2">
+            <FormGroup className="p-1">
               <Label>Last Name</Label>
               <Input
                 className="bg-dark border-secondary text-secondary form-control rounded-pill"
@@ -73,7 +73,7 @@ function RegisterForm(props) {
               />
             </FormGroup>
           </div>
-          <FormGroup className="p-2">
+          <FormGroup className="p-1 col-12">
             <Label>Email</Label>
             <Input
               className="bg-dark border-secondary text-secondary form-control rounded-pill"
@@ -81,21 +81,38 @@ function RegisterForm(props) {
               onChange={(e) => setEmail(e.target.value)}
             />
           </FormGroup>
-          <div className="d-flex">
-            <FormGroup className="p-2 col-2">
-              <Label>+</Label>
-              <Input className="bg-dark border-secondary text-secondary form-control rounded-pill" />
-            </FormGroup>
-            <FormGroup className="p-2 col-10">
-              <Label>Phone Number</Label>
-              <Input
-                className="bg-dark border-secondary text-secondary form-control rounded-pill"
-                placeholder="Phone"
-                onChange={(e) => setPhone(e.target.value)}
-              />
-            </FormGroup>
+
+          <div className="d-flex flex-column">
+            <Label>Phone Number</Label>
+            <div className="d-flex">
+              <div className="col-2 me-4">
+                <Input
+                  className="bg-dark border-secondary text-secondary form-control rounded-pill"
+                  style={{ position: "relative", top: 0 }}
+                  maxLength="2"
+                  placeholder="CC"
+                >
+                  91
+                </Input>
+                <p
+                  style={{ position: "relative", top: -30 }}
+                  className="bg-dark col-1"
+                >
+                  +
+                </p>
+              </div>
+              <FormGroup className="col-9 ">
+                <Input
+                  className="bg-dark border-secondary text-secondary form-control rounded-pill"
+                  placeholder="Phone"
+                  onChange={(e) => setPhone(e.target.value)}
+                  maxLength="10"
+                />
+              </FormGroup>
+            </div>
           </div>
-          <FormGroup className="p-2">
+
+          <FormGroup className="p-1" style={{ marginTop: "-25px" }}>
             <Label>Username</Label>
             <Input
               className="bg-dark border-secondary text-secondary form-control rounded-pill"
@@ -103,7 +120,7 @@ function RegisterForm(props) {
               onChange={(e) => setUsername(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="p-2">
+          <FormGroup className="p-1">
             <Label>Password</Label>
             <Input
               className="bg-dark border-secondary text-secondary form-control rounded-pill"
@@ -112,7 +129,7 @@ function RegisterForm(props) {
               onChange={(e) => setPassword(e.target.value)}
             />
           </FormGroup>
-          <FormGroup className="p-2">
+          <FormGroup className="p-1">
             <Label>Confirm Password</Label>
             <Input
               className="bg-dark border-secondary text-secondary form-control rounded-pill"
