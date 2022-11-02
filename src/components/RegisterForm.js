@@ -32,6 +32,7 @@ function RegisterForm(props) {
       };
       axios.post("/users/register", payload).then((res) => {
         console.log(res);
+        props.toggleFormSwitch(!props.formSwitch);
       });
       console.log(payload);
     } else {
@@ -145,7 +146,7 @@ function RegisterForm(props) {
           onClick={(e) => {
             props.toggleFormSwitch(!props.formSwitch);
           }}
-          className="text-secondary"
+          className="text-secondary mouse"
         >
           Already registered?
         </p>

@@ -18,7 +18,7 @@ function LoginForm(props) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [shouldRedirect, setShouldRedirect] = useState(false);
-
+  // Function for saving Login Information into cookies after successful authentication with the backend.
   const handleSubmit = (e, value) => {
     const payload = { username, password };
     axios.post("/users/login", payload).then((res) => {
@@ -29,11 +29,12 @@ function LoginForm(props) {
     });
   };
   return (
+    // Login Card
     <Card
       className="text-primary p-0 bg-dark w-100"
       style={{ borderRadius: "20px" }}
     >
-      {shouldRedirect && <Navigate to="/gallery" />}
+      {shouldRedirect && <Navigate to="/" />}
       <CardHeader
         className="all-center"
         style={{
@@ -46,6 +47,7 @@ function LoginForm(props) {
       <CardBody className="all-center">
         <Form className="w-75">
           <FormGroup className="p-1 col-12">
+            {/* Username Field  */}
             <Label>Username</Label>
             <Input
               className="bg-dark border-primary text-primary form-control rounded-pill"
@@ -54,6 +56,7 @@ function LoginForm(props) {
             />
           </FormGroup>
           <FormGroup className="p-1">
+            {/* Password Field  */}
             <Label>Password</Label>
             <Input
               className="bg-dark border-primary text-primary form-control rounded-pill"
@@ -65,10 +68,12 @@ function LoginForm(props) {
         </Form>
       </CardBody>
       <CardFooter className="all-center flex-column">
+        {/* Toggle for switching to Registration Form  */}
         <p
           onClick={(e) => {
             props.toggleFormSwitch(!props.formSwitch);
           }}
+          className="mouse"
         >
           Haven't registered yet?
         </p>

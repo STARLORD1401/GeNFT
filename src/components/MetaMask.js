@@ -8,7 +8,7 @@ function Login() {
   const navigate = useNavigate();
   console.log("navigate: ", navigate);
   const [isConnected, setIsConnected] = useState(false);
-
+  // Check for a Web3 compatible browser.
   const detectCurrentProvider = () => {
     let provider;
     if (window.ethereum) {
@@ -20,6 +20,7 @@ function Login() {
     }
     return provider;
   };
+  // Connect with ETH Based Wallet
   const onConnect = async () => {
     try {
       const currentProvider = detectCurrentProvider();
@@ -67,7 +68,7 @@ function Login() {
         color="tertiary"
         className="text-dark rounded-pill"
         onClick={() => {
-          isConnected ? navigate("/gallery") : onConnect();
+          isConnected ? navigate("/") : onConnect();
         }}
       >
         {isConnected ? <>Proceed to Gallery</> : <>Link to MetaMask</>}

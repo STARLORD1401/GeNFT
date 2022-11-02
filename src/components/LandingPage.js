@@ -13,8 +13,10 @@ function LandingPage() {
   return (
     <div>
       <div id="landing-page-container"></div>
+      {/* Setting the Background Image  */}
       <BackgroundImage bg={background} />
       <div id="landing-page-overlay" />
+      {/* Importing Tagline from the Tagline Component  */}
       <div className="all-center full flex-column" id="landing-page-content">
         <Tagline />
         {page === 2 && (
@@ -33,6 +35,7 @@ function LandingPage() {
           </div>
         )}
         {page <= 3 && (
+          // Toggle button to traverse throught the tour
           <Button
             style={{ width: "8vw" }}
             onClick={() => {

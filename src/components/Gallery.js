@@ -22,20 +22,24 @@ function Gallery() {
   }, []);
   return (
     <div>
+      {/* Setting the Background Image using the BackgroundImage Component */}
       <BackgroundImage bg={bg} />
       <div className="full" style={{ position: "absolute", top: 0 }}>
+        {/* Navigation Bar */}
         <NavigationBar
           userDetails={userDetails}
           toggleProfileInsight={toggleProfileInsight}
           profileInsight={profileInsight}
         />
         <div className="all-center align-items-start">
+          {/* Profile Modal */}
           <ProfileInsight
             isOpen={profileInsight}
             userDetails={userDetails}
             delUser={delUser}
           />
           <div className="all-center flex-column" style={{}}>
+            {/* Gallery Container  */}
             <div id="gallery-container">
               {[...Array(n)].map((e, i) => (
                 <Row className="all-center mt-3">
@@ -47,6 +51,7 @@ function Gallery() {
                           : "border-secondary"
                       } `}
                     >
+                      {/* NFT Tiles  */}
                       <img
                         src={nft[m]}
                         alt="#"

@@ -1,11 +1,10 @@
-.full{
+.full {
   min-height: 100vh;
- min-width: 100vw; 
- max-height: 100vh;
- max-width: 100vh;
-
+  min-width: 100vw;
+  max-height: 100vh;
+  max-width: 100vh;
 }
-.all-center{
+.all-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,17 +20,20 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #70A6E1;
+  background: #70a6e1;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #D170E1;
+  background: #d170e1;
 }
-.rounded-20{
+.rounded-20 {
   border-radius: 20px;
 }
-.hi-5{
-  height:'5vh';
+.hi-5 {
+  height: "5vh";
+}
+.mouse {
+  cursor: pointer;
 }

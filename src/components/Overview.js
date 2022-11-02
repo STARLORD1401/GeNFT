@@ -11,6 +11,7 @@ function Overview() {
         className="bg-dark w-100 text-tertiary mt-3"
         style={{ borderRadius: "20px" }}
       >
+        {/* A random quote  */}
         <CardBody>
           <h6>Embrace your inner collector, generate your NFT's now!</h6>
         </CardBody>
@@ -22,6 +23,7 @@ function Overview() {
       >
         <CardHeader className="text-tertiary text-center">GeNFT</CardHeader>
         <CardBody className=" flex-column all-center overview-container">
+          {/* Dummy NFT Tiles  */}
           {[...Array(n)].map((e, i) => (
             <Row className="p-2">
               {[...Array(k)].map((e, m) => (

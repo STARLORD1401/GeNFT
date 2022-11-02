@@ -5,7 +5,6 @@ import ShareIcon from "@mui/icons-material/Share";
 import Person4Icon from "@mui/icons-material/Person4";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
-import AssignmentIcon from "@mui/icons-material/Assignment";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import { useNavigate } from "react-router-dom";
@@ -17,12 +16,14 @@ function ProfileInsight(props) {
   const [showQR, toggleShowQR] = useState(false);
   const navigate = useNavigate();
   return (
+    //A collapsible modal
     <Collapse
       isOpen={props.isOpen}
       id="profile-insight"
       className="bg-dark all-center justify-content-start flex-column p-2"
     >
       <div className="all-center flex-column text-white justify-content-start">
+        {/* Profile Banner  */}
         <img
           src={bg2}
           style={{
@@ -41,6 +42,7 @@ function ProfileInsight(props) {
           }}
         >
           <div className=" all-center align-items-start p-2 w-100">
+            {/* QR Code Toggle Button  */}
             <Button
               className="text-primary col-4 "
               color="dark"
@@ -52,6 +54,7 @@ function ProfileInsight(props) {
               {showQR ? <CloseIcon /> : <QrCodeScannerIcon />}
             </Button>
             <span className="col-8 " />
+            {/* Share Button  */}
             <Button
               className=" text-primary col-4 "
               color="dark"
@@ -60,9 +63,10 @@ function ProfileInsight(props) {
               <ShareIcon />
             </Button>
           </div>
-
+          {/* Toggle between Profile Picture and QR Code  */}
           {showQR ? (
             <img
+              className="bg-white p-2"
               alt="qr"
               src={QR}
               style={{ height: "100px", width: "100px", borderRadius: "20px" }}
@@ -77,6 +81,7 @@ function ProfileInsight(props) {
         </div>
       </div>
       <ListGroup className="w-100 mt-3">
+        {/* List of Menu Items  */}
         <ListGroupItem
           className="bg-dark text-white list-items"
           tag="a"
@@ -109,11 +114,11 @@ function ProfileInsight(props) {
           tag="a"
           href="#"
           onClick={() => {
-            navigate("/form-page");
+            navigate("/python-test");
           }}
         >
-          <AssignmentIcon className="me-3" />
-          Register
+          <AutoFixHighIcon className="me-3" />
+          Test Generator
         </ListGroupItem>
         <ListGroupItem
           className="bg-dark text-white list-items"
@@ -126,17 +131,6 @@ function ProfileInsight(props) {
         >
           <ExitToAppIcon className="me-3" />
           Sign Out
-        </ListGroupItem>
-        <ListGroupItem
-          className="bg-dark text-white list-items"
-          tag="a"
-          href="#"
-          onClick={() => {
-            navigate("/python-test");
-          }}
-        >
-          <AutoFixHighIcon className="me-3" />
-          Test Generator
         </ListGroupItem>
       </ListGroup>
     </Collapse>

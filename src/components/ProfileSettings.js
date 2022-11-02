@@ -1,10 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Web3 from "web3";
+import { useNavigate } from "react-router-dom";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { Button } from "reactstrap";
+import { getUser } from "../helpers/auth";
 
-function UserDetails() {
+function ProfileSettings() {
+  useEffect(() => {
+    setUserDetails(getUser());
+  }, []);
+  // Checking and importing cookies.
+  const [userDetails, setUserDetails] = useState({});
   const [account, setAccount] = useState("");
-
+  const navigate = useNavigate();
   const detectCurrentProvider = () => {
     let provider;
     if (window.ethereum) {
@@ -16,6 +25,7 @@ function UserDetails() {
     }
     return provider;
   };
+  //Checking connection with Ethereum wallet instance.
   const onConnect = async () => {
     try {
       const currentProvider = detectCurrentProvider();
@@ -36,13 +46,27 @@ function UserDetails() {
   return (
     <div className="text-white p-5 all-center flex-column">
       <div className="bg-primary all-center p-5 rounded-20 flex-column w-100">
+        <div className="d-flex justify-content-start w-100">
+          {/* Back Button  */}
+          <Button
+            color="white"
+            className="rounded-pill text-primary"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <ArrowBackIosNewIcon />
+          </Button>
+        </div>
         <div
           className="bg-white rounded-20 m-3"
           style={{ height: "100px", width: "100px" }}
         />
-        <p>username</p>
+        {/* Display Username  */}
+        <p>{userDetails.username}</p>
       </div>
       <div className="bg-dark all-center mt-5 w-100">
+        {/* Display Personal Details with the help of Cookies and ETH Wallet instance  */}
         <div className="all-center flex-column align-items-start col-4">
           <h6>Name:</h6>
           <h6>Email:</h6>
@@ -50,8 +74,10 @@ function UserDetails() {
         </div>
 
         <div className="all-center flex-column align-items-start col-4">
-          <h6>Shreyas Joshi</h6>
-          <h6>shreyaspjoshi.14@gmail.com</h6>
+          <h6>
+            {userDetails.first_name} {userDetails.last_name}
+          </h6>
+          <h6>{userDetails.email}</h6>
           <h6>{account}</h6>
         </div>
       </div>
@@ -59,4 +85,4 @@ function UserDetails() {
   );
 }
 
-export default UserDetails;
+export default ProfileSettings;

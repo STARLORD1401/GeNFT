@@ -18,6 +18,7 @@ function PlansPage() {
       </p>
       <Row>
         <Col className="text-primary col-6 all-center plan-card">
+          {/* Plan Card 1  */}
           <Card className="bg-dark w-75" style={{ borderRadius: "20px" }}>
             <CardHeader className="text-center ">
               <h3>10 NFT's Plan</h3>
@@ -38,6 +39,7 @@ function PlansPage() {
           </Card>
         </Col>
         <Col className="text-secondary col-6 all-center plan-card">
+          {/* Plan Card 2  */}
           <Card className="bg-dark w-75" style={{ borderRadius: "20px" }}>
             <CardHeader className="text-center">
               <h3>20 NFT's Plan</h3>
@@ -51,6 +53,7 @@ function PlansPage() {
               </ul>
             </CardBody>
             <CardFooter className="all-center">
+              {/* Buy Button  */}
               <Button color="secondary" className="w-25 rounded-pill">
                 Buy
               </Button>

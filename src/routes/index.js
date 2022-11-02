@@ -6,7 +6,7 @@ import Generator from "../components/Generator.js";
 
 const authProtectedRoutes = [
   {
-    path: "/gallery",
+    path: "/",
     component: Gallery,
   },
   {
@@ -24,7 +24,7 @@ const authProtectedRoutes = [
 ];
 const publicRoutes = [
   {
-    path: "/",
+    path: "/landing",
     component: LandingPage,
   },
 
