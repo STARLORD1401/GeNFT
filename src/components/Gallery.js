@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import NavigationBar from "./NavigationBar.js";
 import ProfileInsight from "./ProfileInsight.js";
 import { Row } from "reactstrap";
@@ -10,11 +10,12 @@ import avatar3 from "../assets/avatar_0002.png";
 import avatar4 from "../assets/avatar_0003.png";
 import BackgroundImage from "./BackgroundImage.js";
 import { getUser, delUser } from "../helpers/auth";
+import { AuthContext } from "../context/AuthContext";
 
 function Gallery() {
   const n = 3;
   const k = 3;
-  const [userDetails, setUserDetails] = useState({});
+  const { userDetails, setUserDetails } = useContext(AuthContext);
   const [profileInsight, toggleProfileInsight] = useState(false);
   const nft = [avatar1, avatar2, avatar3, avatar4];
   useEffect(() => {

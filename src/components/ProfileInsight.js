@@ -114,7 +114,7 @@ function ProfileInsight(props) {
           tag="a"
           href="#"
           onClick={() => {
-            navigate("/python-test");
+            navigate("/generator");
           }}
         >
           <AutoFixHighIcon className="me-3" />

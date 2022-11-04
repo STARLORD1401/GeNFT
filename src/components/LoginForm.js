@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "../axios.js";
 import { setUser } from "../helpers/auth";
 import {
@@ -12,19 +12,23 @@ import {
   Button,
   Label,
 } from "reactstrap";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 function LoginForm(props) {
+  const { setUserDetails } = useContext(AuthContext);
+  let navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [shouldRedirect, setShouldRedirect] = useState(false);
+
   // Function for saving Login Information into cookies after successful authentication with the backend.
   const handleSubmit = (e, value) => {
     const payload = { username, password };
     axios.post("/users/login", payload).then((res) => {
       const isUserSet = setUser(res.data);
       if (isUserSet) {
-        setShouldRedirect(true);
+        setUserDetails(res.data);
+        navigate("/");
       }
     });
   };
@@ -34,7 +38,7 @@ function LoginForm(props) {
       className="text-primary p-0 bg-dark w-100"
       style={{ borderRadius: "20px" }}
     >
-      {shouldRedirect && <Navigate to="/" />}
+      {/* {shouldRedirect && <Redirect to="/" />} */}
       <CardHeader
         className="all-center"
         style={{

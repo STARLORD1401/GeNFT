@@ -1,6 +1,8 @@
 import NavigationBar from "./NavigationBar";
 import ProfileInsight from "./ProfileInsight";
 import React, { useState, useEffect } from "react";
+import { Button } from "reactstrap";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { getUser, delUser } from "../helpers/auth";
 import eye1 from "../assets/layers/Eyes/eye_1 1.png";
 import eye2 from "../assets/layers/Eyes/eye_2 1.png";
@@ -15,6 +17,7 @@ import char3 from "../assets/layers/Characters/face_3.png";
 import char4 from "../assets/layers/Characters/face_4.png";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import Canvas from "./Canvas.js";
+import { useNavigate } from "react-router-dom";
 
 function CanvasGenerator({ b, c, e }) {
   // Importing Background Layers
@@ -23,7 +26,6 @@ function CanvasGenerator({ b, c, e }) {
   const chars = [char1, char2, char3, char4];
   // Importing Eyes Layers
   const eyes = [eye1, eye2, eye3, eye4];
-
   // Invoking a canvas instance with Background and multiple Foreground Layers.
   const draw = (context) => {
     // Background Layer
@@ -49,7 +51,7 @@ function CanvasGenerator({ b, c, e }) {
 function Generator() {
   const [userDetails, setUserDetails] = useState({});
   const [profileInsight, toggleProfileInsight] = useState(false);
-
+  const navigate = useNavigate();
   const [data, setData] = useState({});
   useEffect(() => {
     setUserDetails(getUser());
@@ -80,6 +82,15 @@ function Generator() {
 
       <div className="p-2">
         <div className="all-center in-between">
+          <Button
+            color="white"
+            className="rounded-pill text-primary m-5"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <ArrowBackIosNewIcon />
+          </Button>
           <h1 className="text-white me-3">NFT Generator</h1>
           <AutoFixHighIcon className="text-white " />
         </div>

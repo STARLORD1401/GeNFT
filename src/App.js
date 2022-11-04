@@ -1,3 +1,4 @@
+import React, { useContext } from "react";
 import "./App.css";
 import "./custom.scss";
 import { authProtectedRoutes, publicRoutes } from "./routes";
@@ -7,10 +8,12 @@ import {
   BrowserRouter as Router,
   Navigate,
 } from "react-router-dom";
-import { getUser } from "./helpers/auth";
+import { AuthContext } from "./context/AuthContext";
+// import { getUser } from "./helpers/auth";
 
 function App() {
-  const userDetails = getUser();
+  // const userDetails = getUser();
+  const { userDetails } = useContext(AuthContext);
   return (
     <Router>
       <Routes>
@@ -27,10 +30,14 @@ function App() {
           <Route
             path={route.path}
             element={
-              !userDetails ? <Navigate to="/form-page" /> : <route.component />
+              !userDetails?._id ? (
+                <Navigate to="/form-page" />
+              ) : (
+                <route.component />
+              )
             }
             key={"auth" + index}
-            isAuthProtected={!userDetails ? false : true}
+            isAuthProtected={!userDetails?._id ? false : true}
             exact={true}
           />
         ))}

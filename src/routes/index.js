@@ -14,11 +14,7 @@ const authProtectedRoutes = [
     component: ProfileSettings,
   },
   {
-    path: "/profile-settings",
-    component: ProfileSettings,
-  },
-  {
-    path: "/python-test",
+    path: "/generator",
     component: Generator,
   },
 ];
